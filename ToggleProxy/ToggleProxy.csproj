@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InstallerClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MyApplicationContext.cs" />
     <Compile Include="NativeHelper.cs" />
     <Compile Include="Program.cs" />
@@ -72,15 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ProxyEnabled.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\proxy_disabled.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\proxy_enabled.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\proxy_disabled.ico" />
