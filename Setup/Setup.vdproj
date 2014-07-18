@@ -87,62 +87,6 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_BC29EFFCD9C84594AB2DDB09185F22D3"
-            {
-            "Name" = "8:Primary output from ToggleProxy (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_E06D296C0EC2417DBF55E33CB878C5DF"
-            "FileType" = "3:2"
-            "InstallAction" = "3:4"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_8847E861_70BD_48BB_A107_1D339624592A"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_C6026BFF3B62445D84979F6720759C87"
-            {
-            "Name" = "8:Primary output from ToggleProxy (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_E06D296C0EC2417DBF55E33CB878C5DF"
-            "FileType" = "3:2"
-            "InstallAction" = "3:3"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_A74DF2D6_A117_48CB_88A5_E2F56E9F086F"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_D45C7020C3A1433794735372F1048689"
-            {
-            "Name" = "8:Primary output from ToggleProxy (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_E06D296C0EC2417DBF55E33CB878C5DF"
-            "FileType" = "3:2"
-            "InstallAction" = "3:1"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_7EB539F9_2AF3_4CD6_8E76_188377ACB1F9"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_DDB277BA3A0D4886B468FF14A9A2FAF0"
-            {
-            "Name" = "8:Primary output from ToggleProxy (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_E06D296C0EC2417DBF55E33CB878C5DF"
-            "FileType" = "3:2"
-            "InstallAction" = "3:2"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_01DFCB6F_9819_46A4_8C97_4FE79DAD0E61"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
         }
         "DefaultFeature"
         {
@@ -224,6 +168,28 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B4AEF770EDAD4507866A5CF99BB863AC"
+                    {
+                    "Name" = "8:MadCowDevelopment"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_6210DF9D317E4F6BABAB5E3BC56A4C3D"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_FF01420D975042508B779D73BB6DE332"
+                            {
+                            "Name" = "8:ToggleProxy"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_DF4DE01C53FD406B8B9E32E6B116CC0D"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_B45C286FAECC4D36B6E9CCC77BC7212B"
@@ -253,8 +219,8 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ToggleProxy"
-        "ProductCode" = "8:{8AB3DEBF-F15C-4E74-817B-74D013BA95B4}"
-        "PackageCode" = "8:{2026F74D-B9B9-46AC-8DB1-680435646A46}"
+        "ProductCode" = "8:{FCE91FD1-0A9F-4BC6-A770-EF80C6006B58}"
+        "PackageCode" = "8:{F52C43CF-1996-4B06-8517-323E01BC6A22}"
         "UpgradeCode" = "8:{4DBB5CCD-82F0-495B-8228-C4E54865EA33}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -374,6 +340,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E1B12B967A7548DBAEDF1F509C244884"
+            {
+            "Name" = "8:ToggleProxy"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_E06D296C0EC2417DBF55E33CB878C5DF"
+            "Folder" = "8:_FF01420D975042508B779D73BB6DE332"
+            "WorkingFolder" = "8:_0FC7283681C44C07A90EE2717BBEA8AA"
+            "Icon" = "8:_5C6861A5788A41D99CC506FD6A7A3C7E"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EF20E8963D7B461AB64C103DEC3BF7F4"
             {
             "Name" = "8:ToggleProxy"

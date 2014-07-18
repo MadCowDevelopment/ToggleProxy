@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>proxy_enabled.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
@@ -46,9 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InstallerClass.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="MyApplicationContext.cs" />
     <Compile Include="NativeHelper.cs" />
     <Compile Include="Program.cs" />
@@ -82,6 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\proxy_enabled.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="proxy_enabled.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
