@@ -9,10 +9,14 @@ namespace ToggleProxy
 
         public MyApplicationContext()
         {
+            if (!string.IsNullOrEmpty(RegistryHelper.ProxyServer))
+                SettingsHelper.ProxyServer = RegistryHelper.ProxyServer;
+
             _notifyIcon = new NotifyIcon();
-            _notifyIcon.Icon = RegistryHelper.GetValue() ? Resources.proxy_enabled : Resources.proxy_disabled;
+            _notifyIcon.Icon = RegistryHelper.ProxyEnable ? Resources.proxy_enabled : Resources.proxy_disabled;
             _notifyIcon.MouseDoubleClick += (sender, args) => Toggle();
             var contextMenu = new ContextMenu();
+            contextMenu.MenuItems.Add(new MenuItem("Toggle", (sender, args) => Toggle()));
             contextMenu.MenuItems.Add(new MenuItem("Exit", (sender, args) => Exit()));
             _notifyIcon.ContextMenu = contextMenu;
             _notifyIcon.Visible = true;
@@ -20,11 +24,12 @@ namespace ToggleProxy
 
         private void Toggle()
         {
-            var value = RegistryHelper.GetValue();
+            var value = RegistryHelper.ProxyEnable;
             value = !value;
-            RegistryHelper.SetValue(value);
+            RegistryHelper.ProxyEnable = value;
+            if(string.IsNullOrEmpty(RegistryHelper.ProxyServer)) RegistryHelper.ProxyServer = SettingsHelper.ProxyServer;
             NativeHelper.RefreshInternetExplorerSettings();
-            _notifyIcon.Icon = RegistryHelper.GetValue() ? Resources.proxy_enabled : Resources.proxy_disabled;
+            _notifyIcon.Icon = RegistryHelper.ProxyEnable ? Resources.proxy_enabled : Resources.proxy_disabled;
         }
 
         private void Exit()

@@ -5,16 +5,34 @@ namespace ToggleProxy
     public static class RegistryHelper
     {
         private const string Key = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings";
-        public static bool GetValue()
+
+        public static bool ProxyEnable
         {
-            var value = Registry.GetValue(Key, "ProxyEnable", string.Empty);
-            return value.ToString() == "1";
+            get
+            {
+                var value = Registry.GetValue(Key, "ProxyEnable", string.Empty);
+                return value.ToString() == "1";
+            }
+
+            set
+            {
+                var regValue = value ? 1 : 0;
+                Registry.SetValue(Key, "ProxyEnable", regValue, RegistryValueKind.DWord);
+            }
         }
 
-        public static void SetValue(bool value)
+        public static string ProxyServer
         {
-            var regValue = value ? 1 : 0;
-            Registry.SetValue(Key, "ProxyEnable", regValue, RegistryValueKind.DWord);
+            get
+            {
+                var value = Registry.GetValue(Key, "ProxyServer", string.Empty);
+                return value.ToString();
+            }
+
+            set
+            {
+                Registry.SetValue(Key, "ProxyServer", value, RegistryValueKind.String);
+            }
         }
     }
 }
