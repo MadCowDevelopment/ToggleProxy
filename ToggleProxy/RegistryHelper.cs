@@ -34,5 +34,19 @@ namespace ToggleProxy
                 Registry.SetValue(Key, "ProxyServer", value, RegistryValueKind.String);
             }
         }
+
+        public static string ProxyOverride
+        {
+            get
+            {
+                var value = Registry.GetValue(Key, "ProxyOverride", string.Empty);
+                return value.ToString();
+            }
+
+            set
+            {
+                Registry.SetValue(Key, "ProxyOverride", value, RegistryValueKind.String);
+            }
+        }
     }
 }

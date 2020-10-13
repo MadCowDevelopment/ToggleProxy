@@ -12,6 +12,9 @@ namespace ToggleProxy
             if (!string.IsNullOrEmpty(RegistryHelper.ProxyServer))
                 SettingsHelper.ProxyServer = RegistryHelper.ProxyServer;
 
+            if (!string.IsNullOrEmpty(RegistryHelper.ProxyOverride))
+                SettingsHelper.ProxyOverride = RegistryHelper.ProxyOverride;
+
             _notifyIcon = new NotifyIcon();
             _notifyIcon.Icon = RegistryHelper.ProxyEnable ? Resources.proxy_enabled : Resources.proxy_disabled;
             _notifyIcon.MouseDoubleClick += (sender, args) => Toggle();
@@ -28,6 +31,7 @@ namespace ToggleProxy
             value = !value;
             RegistryHelper.ProxyEnable = value;
             if(string.IsNullOrEmpty(RegistryHelper.ProxyServer)) RegistryHelper.ProxyServer = SettingsHelper.ProxyServer;
+            if(string.IsNullOrEmpty(RegistryHelper.ProxyOverride)) RegistryHelper.ProxyOverride = SettingsHelper.ProxyOverride;
             NativeHelper.RefreshInternetExplorerSettings();
             _notifyIcon.Icon = RegistryHelper.ProxyEnable ? Resources.proxy_enabled : Resources.proxy_disabled;
         }
